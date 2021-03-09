@@ -17,7 +17,7 @@ public class CountModule implements Module {
 
     @Override
     public void start() {
-        this.userInterface.printf("The Phone Book has %d records.", phoneBook.count());
+        this.userInterface.printf("The Phone Book has %d records.\n", phoneBook.count());
     }
 
 }

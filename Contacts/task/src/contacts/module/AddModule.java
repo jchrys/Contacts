@@ -27,6 +27,6 @@ public class AddModule implements Module{
                 .withPhoneNumber(number)
                 .build();
         phoneBook.addContact(contact);
-        userInterface.printf("The Record Added");
+        userInterface.printf("The Record Added\n");
     }
 }
