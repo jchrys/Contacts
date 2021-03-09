@@ -2,11 +2,11 @@ package contacts.common;
 
 import java.util.Scanner;
 
-public class UserInputReaderImpl implements UserInputReader {
+public class UserInterfaceImpl implements UserInterface {
 
     private final Scanner scanner;
 
-    public UserInputReaderImpl() {
+    public UserInterfaceImpl() {
         this.scanner = new Scanner(System.in);
     }
 
@@ -15,5 +15,10 @@ public class UserInputReaderImpl implements UserInputReader {
     public String read(String prompt) {
         System.out.println(prompt);
         return scanner.next();
+    }
+
+    @Override
+    public void printf(String format, Object... args) {
+        System.out.printf(format, args);
     }
 }

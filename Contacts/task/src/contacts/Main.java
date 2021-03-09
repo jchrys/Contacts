@@ -1,7 +1,7 @@
 package contacts;
 
-import contacts.common.UserInputReader;
-import contacts.common.UserInputReaderImpl;
+import contacts.common.UserInterface;
+import contacts.common.UserInterfaceImpl;
 import contacts.engine.Engine;
 import contacts.entity.PhoneBook;
 
@@ -9,9 +9,9 @@ public class Main {
 
     public static void main(String[] args) {
         PhoneBook phoneBook = new PhoneBook();
-        UserInputReader userInputReader = new UserInputReaderImpl();
+        UserInterface userInterface = new UserInterfaceImpl();
 
-        Engine engine = new Engine(phoneBook, userInputReader);
+        Engine engine = new Engine(phoneBook, userInterface);
 
         engine.start();
     }

@@ -1,21 +1,23 @@
 package contacts.module;
 
-import contacts.common.UserInputReader;
+import contacts.common.UserInterface;
 import contacts.entity.PhoneBook;
 
 public class CountModule implements Module {
 
     private PhoneBook phoneBook;
+    private UserInterface userInterface;
 
     @Override
-    public Module init(PhoneBook phoneBook, UserInputReader userInputReader) {
+    public Module init(PhoneBook phoneBook, UserInterface userInterface) {
         this.phoneBook = phoneBook;
+        this.userInterface = userInterface;
         return this;
     }
 
     @Override
     public void start() {
-        System.out.printf("The Phone Book has %d records.", phoneBook.count());
+        this.userInterface.printf("The Phone Book has %d records.", phoneBook.count());
     }
 
 }
