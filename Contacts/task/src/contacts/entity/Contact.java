@@ -11,6 +11,10 @@ public class Contact {
         this.phoneNumber = phoneNumber;
     }
 
+    public static ContactBuilder builder() {
+        return new ContactBuilder();
+    }
+
     public static final class ContactBuilder {
         private String name;
         private String surName;

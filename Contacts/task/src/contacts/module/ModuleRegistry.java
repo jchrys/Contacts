@@ -3,7 +3,9 @@ package contacts.module;
 import java.util.Arrays;
 
 public enum ModuleRegistry {
-    Count(new CountModule());
+    COUNT(new CountModule()),
+    ADD(new AddModule()),
+    ;
 
     ModuleRegistry(Module module) {
         this.module = module;
