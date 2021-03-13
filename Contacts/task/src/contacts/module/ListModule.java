@@ -20,7 +20,7 @@ public class ListModule implements Module {
     public void start() {
         for (int i = 0; i < phoneBook.count(); ++i) {
             Contact contact = phoneBook.getAt(i);
-            System.out.printf("%d. %s, %s\n", i + 1,  contact.getFullName(), contact.getPhoneNumber());
+            userInterface.printf("%d. %s, %s\n", i + 1, contact.getFullName(), contact.getPhoneNumber());
         }
     }
 }
