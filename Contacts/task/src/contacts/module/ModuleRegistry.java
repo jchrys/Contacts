@@ -7,6 +7,7 @@ public enum ModuleRegistry {
     ADD(new AddModule()),
     LIST(new ListModule()),
     REMOVE(new RemoveModule()),
+    EDIT(new EditModule()),
     ;
 
     ModuleRegistry(Module module) {

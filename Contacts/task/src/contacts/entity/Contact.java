@@ -65,4 +65,15 @@ public class Contact {
             return new Contact(name, surName, phoneNumber);
         }
     }
+
+    public ContactMessage editField(String field, String value) {
+        if ("number".equalsIgnoreCase(field)) {
+            this.phoneNumber = value;
+        } else if ("name".equalsIgnoreCase(field)) {
+            this.name = field;
+        } else {
+            this.surName = value;
+        }
+        return isValid();
+    }
 }
