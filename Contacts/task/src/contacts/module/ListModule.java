@@ -4,6 +4,8 @@ import contacts.common.UserInterface;
 import contacts.entity.Contact;
 import contacts.entity.PhoneBook;
 
+import java.util.stream.Collectors;
+
 public class ListModule implements Module {
     private PhoneBook phoneBook;
     private UserInterface userInterface;
@@ -18,9 +20,7 @@ public class ListModule implements Module {
 
     @Override
     public void start() {
-        for (int i = 0; i < phoneBook.count(); ++i) {
-            Contact contact = phoneBook.getAt(i);
-            userInterface.printf("%d. %s, %s\n", i + 1, contact.getFullName(), contact.getPhoneNumber());
-        }
+        phoneBook.getAllContacts()
+                .forEach(userInterface::printf);
     }
 }

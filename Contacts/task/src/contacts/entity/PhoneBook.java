@@ -4,6 +4,8 @@ import contacts.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class PhoneBook {
     List<Contact> contacts;
@@ -27,5 +29,11 @@ public class PhoneBook {
 
     public Contact getAt(int idx) {
         return contacts.get(idx);
+    }
+
+    public List<String> getAllContacts() {
+        return IntStream.range(0, contacts.size())
+                .mapToObj(idx -> String.format("%d. %s, %s\n", idx + 1, contacts.get(idx).getFullName(), contacts.get(idx).getPhoneNumber()))
+                .collect(Collectors.toList());
     }
 }
