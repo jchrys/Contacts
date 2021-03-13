@@ -19,6 +19,10 @@ public class EditModule implements Module {
 
     @Override
     public void start() {
+        if (phoneBook.count() == 0) {
+            userInterface.printf("No records to edit!\n");
+            return;
+        }
         phoneBook.getAllContacts().forEach(userInterface::printf);
         int idx = Integer.parseInt(userInterface.read("Select a record:"));
         String field = userInterface.read("Select a field (name, surname, number):");
