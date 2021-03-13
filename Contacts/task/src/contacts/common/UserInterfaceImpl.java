@@ -14,7 +14,7 @@ public class UserInterfaceImpl implements UserInterface {
     @Override
     public String read(String prompt) {
         System.out.println(prompt);
-        return scanner.next();
+        return scanner.nextLine();
     }
 
     @Override

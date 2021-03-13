@@ -1,6 +1,7 @@
 package contacts.entity;
 
 import contacts.util.PhoneNumberValidator;
+import contacts.util.StringUtils;
 
 public class Contact {
     private String name;
@@ -11,6 +12,14 @@ public class Contact {
         this.name = name;
         this.surName = surName;
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getFullName() {
+        return name + (StringUtils.isEmpty(surName) ? "" : " " + surName);
+    }
+
+    public String getPhoneNumber() {
+        return this.phoneNumber;
     }
 
     public ContactMessage isValid() {

@@ -5,6 +5,7 @@ import java.util.Arrays;
 public enum ModuleRegistry {
     COUNT(new CountModule()),
     ADD(new AddModule()),
+    LIST(new ListModule()),
     ;
 
     ModuleRegistry(Module module) {

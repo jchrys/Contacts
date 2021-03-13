@@ -24,4 +24,8 @@ public class PhoneBook {
     public int count() {
         return this.contacts.size();
     }
+
+    public Contact getAt(int idx) {
+        return contacts.get(idx);
+    }
 }
