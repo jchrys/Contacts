@@ -1,14 +1,24 @@
 package contacts.entity;
 
+import contacts.util.PhoneNumberValidator;
+
 public class Contact {
-    private final String name;
-    private final String surName;
-    private final String phoneNumber;
+    private String name;
+    private String surName;
+    private String phoneNumber;
 
     public Contact(String name, String surName, String phoneNumber) {
         this.name = name;
         this.surName = surName;
         this.phoneNumber = phoneNumber;
+    }
+
+    public ContactMessage isValid() {
+        boolean isValid = PhoneNumberValidator.isValid(this.phoneNumber);
+        if (!isValid) {
+            this.phoneNumber = "[no number]";
+        }
+        return ContactMessage.ok(!isValid ? "Wrong number format!" : "");
     }
 
     public static ContactBuilder builder() {

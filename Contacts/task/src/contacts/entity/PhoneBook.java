@@ -1,5 +1,7 @@
 package contacts.entity;
 
+import contacts.util.StringUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +13,12 @@ public class PhoneBook {
     }
 
     public void addContact(Contact contact) {
+        ContactMessage message = contact.isValid();
         this.contacts.add(contact);
+        if (StringUtils.isNotEmpty(message.getMessage())) {
+            System.out.println(message.getMessage());
+        }
+        System.out.println("The record added.");
     }
 
     public int count() {
