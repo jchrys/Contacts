@@ -31,6 +31,10 @@ public class PhoneBook {
         return contacts.get(idx);
     }
 
+    public void removeAt(int idx) {
+        contacts.remove(idx);
+    }
+
     public List<String> getAllContacts() {
         return IntStream.range(0, contacts.size())
                 .mapToObj(idx -> String.format("%d. %s, %s\n", idx + 1, contacts.get(idx).getFullName(), contacts.get(idx).getPhoneNumber()))
