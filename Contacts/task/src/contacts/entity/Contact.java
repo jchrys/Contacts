@@ -70,7 +70,7 @@ public class Contact {
         if ("number".equalsIgnoreCase(field)) {
             this.phoneNumber = value;
         } else if ("name".equalsIgnoreCase(field)) {
-            this.name = field;
+            this.name = value;
         } else {
             this.surName = value;
         }
