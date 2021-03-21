@@ -15,7 +15,7 @@ public class ContactFactory extends AbstractContactFactory {
     private static final String ORGANIZATION = "ORGANIZATION";
 
     @Override
-    Contact createContact(String type) {
+    protected Contact createContact(String type) {
         if (PERSON.equalsIgnoreCase(type)) {
             return createPerson();
         }

@@ -8,9 +8,9 @@ import contacts.util.UIUtil;
 import java.time.LocalDateTime;
 
 public abstract class AbstractContactFactory {
-    abstract Contact createContact(String type);
+    abstract protected Contact createContact(String type);
 
-    Contact newInstance() {
+    public Contact create() {
         String type = UIUtil.getLine("Enter the type: ");
         Contact contact = createContact(type);
         if (contact != null) {

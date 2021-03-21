@@ -14,6 +14,8 @@ public class UIConstants {
     public static final String ENTER_ORG_NAME = "Enter the organization name:";
     public static final String ENTER_ADDRESS = "Enter the address:";
 
+    public static final String ADDED = "The record added.";
+
     public static final String BAD_BIRTH_DATE = "Bad birth Date!";
     public static final String BAD_GENDER = "Bad gender!";
     public static final String BAD_NUMBER = "Bad number!";
