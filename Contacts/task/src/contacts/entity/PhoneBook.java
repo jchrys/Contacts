@@ -2,6 +2,8 @@ package contacts.entity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class PhoneBook {
     List<Contact> contacts;
@@ -12,5 +14,15 @@ public class PhoneBook {
 
     public void add(Contact contact) {
         contacts.add(contact);
+    }
+
+    public String list() {
+        return IntStream.range(0, contacts.size())
+                .mapToObj(idx -> (idx + 1) + ". " + contacts.get(idx).getSimpleName())
+                .collect(Collectors.joining("\n"));
+    }
+
+    public String getInfo(int idx) {
+        return contacts.get(idx).getInfo();
     }
 }

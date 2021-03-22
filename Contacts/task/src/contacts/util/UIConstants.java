@@ -10,6 +10,7 @@ public class UIConstants {
     public static final String ENTER_BIRTH_DATE = "Enter the birth date:";
     public static final String ENTER_GENDER = "Enter the gender (M, F):";
     public static final String ENTER_ACTION = "Enter action (add, remove, edit, count, info, exit):";
+    public static final String ENTER_INDEX = "Enter index to show info:";
 
     public static final String ENTER_ORG_NAME = "Enter the organization name:";
     public static final String ENTER_ADDRESS = "Enter the address:";
@@ -22,4 +23,5 @@ public class UIConstants {
 
     public static final String EXIT = "exit";
     public static final String ADD = "add";
+    public static final String INFO = "info";
 }

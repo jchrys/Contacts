@@ -1,6 +1,7 @@
 package contacts;
 
 import contacts.command.Add;
+import contacts.command.Info;
 import contacts.entity.PhoneBook;
 import contacts.invoker.Invoker;
 import contacts.util.UIConstants;
@@ -15,9 +16,9 @@ public class ContactApp {
         while (!UIConstants.EXIT.equals(userInput = UIUtil.getLine(UIConstants.ENTER_ACTION))) {
             if (UIConstants.ADD.equals(userInput)) {
                 invoker.setCommand(new Add(phoneBook));
+            } else if (UIConstants.INFO.equals(userInput)) {
+                invoker.setCommand(new Info(phoneBook));
             }
-
-
             invoker.execute();
         }
     }

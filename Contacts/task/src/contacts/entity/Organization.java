@@ -18,7 +18,12 @@ public class Organization extends Contact {
     String getInfo() {
         return "Organization name: " + organizationName + StringUtils.NEW_LINE +
                 "Address: " + address + StringUtils.NEW_LINE +
-                "Time created: " + createdAt + StringUtils.NEW_LINE +
-                "Time last edit: " + modifiedAt + StringUtils.NEW_LINE;
+                "Time created: " + getCreatedAt() + StringUtils.NEW_LINE +
+                "Time last edit: " + getModifiedAt() + StringUtils.NEW_LINE;
+    }
+
+    @Override
+    String getSimpleName() {
+        return organizationName;
     }
 }

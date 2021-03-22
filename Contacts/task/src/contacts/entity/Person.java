@@ -33,7 +33,12 @@ public class Person extends Contact {
                 "Birth date: " + (birthDate == null ? StringUtils.NO_DATA : birthDate) + StringUtils.NEW_LINE +
                 "Gender: " + (gender == null ? StringUtils.NO_DATA : gender) + StringUtils.NEW_LINE +
                 "Number: " + (number == null ? StringUtils.NO_DATA : number) + StringUtils.NEW_LINE +
-                "Time created: " + createdAt + StringUtils.NEW_LINE +
-                "Time last edit: " + modifiedAt + StringUtils.NEW_LINE;
+                "Time created: " + getCreatedAt() + StringUtils.NEW_LINE +
+                "Time last edit: " + getModifiedAt() + StringUtils.NEW_LINE;
+    }
+
+    @Override
+    String getSimpleName() {
+        return name + " " + surname;
     }
 }

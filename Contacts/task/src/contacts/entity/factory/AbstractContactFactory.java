@@ -16,7 +16,7 @@ public abstract class AbstractContactFactory {
         if (contact != null) {
             String numberString = UIUtil.getLine(UIConstants.ENTER_NUMBER);
             String number = null;
-            if (ValidationUtils.isValidNumber(numberString)) {
+            if (ValidationUtils.isValidNumber(numberString)) { //TODO +0 (123) 456-789-ABcd -> (123) 456-789-ABcd
                 number = numberString;
             } else {
                 UIUtil.println(UIConstants.BAD_NUMBER);
