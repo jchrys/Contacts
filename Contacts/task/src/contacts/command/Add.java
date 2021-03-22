@@ -9,6 +9,10 @@ import contacts.util.UIUtil;
 public class Add implements Command {
     private PhoneBook phoneBook;
 
+    public Add(PhoneBook phoneBook) {
+        this.phoneBook = phoneBook;
+    }
+
     @Override
     public void execute() {
         ContactFactory contactFactory = new ContactFactory();

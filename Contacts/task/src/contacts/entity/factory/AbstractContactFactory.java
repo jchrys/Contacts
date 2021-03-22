@@ -11,7 +11,7 @@ public abstract class AbstractContactFactory {
     abstract protected Contact createContact(String type);
 
     public Contact create() {
-        String type = UIUtil.getLine("Enter the type: ");
+        String type = UIUtil.getLine(UIConstants.ENTER_TYPE);
         Contact contact = createContact(type);
         if (contact != null) {
             String numberString = UIUtil.getLine(UIConstants.ENTER_NUMBER);
