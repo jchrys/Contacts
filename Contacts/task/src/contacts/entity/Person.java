@@ -1,8 +1,13 @@
 package contacts.entity;
 
 import contacts.util.StringUtils;
+import contacts.util.UIConstants;
+import contacts.util.UIUtil;
+import contacts.util.ValidationUtils;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
+import java.util.List;
 
 public class Person extends Contact {
     private String name;
@@ -18,12 +23,23 @@ public class Person extends Contact {
         this.surname = surname;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
-        this.birthDate = birthDate;
+    public void setBirthDate(String birthDate) {
+        LocalDate localDate = null;
+        try {
+            localDate = LocalDate.parse(birthDate);
+        } catch (DateTimeParseException e) {
+            UIUtil.println(UIConstants.BAD_BIRTH_DATE);
+        }
+        this.birthDate = localDate;
     }
 
     public void setGender(String gender) {
-        this.gender = gender;
+        if (ValidationUtils.isValidGender(gender)) {
+            this.gender = gender;
+        } else {
+            UIUtil.println(UIConstants.BAD_GENDER);
+            this.gender = null;
+        }
     }
 
     @Override
@@ -38,7 +54,13 @@ public class Person extends Contact {
     }
 
     @Override
-    String getSimpleName() {
+    public String getSimpleName() {
         return name + " " + surname;
     }
+
+    @Override
+    public List<String> getEditableFields() {
+        return List.of("name", "surname", "birthDate", "gender", "number");
+    }
+
 }

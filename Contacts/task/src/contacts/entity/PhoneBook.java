@@ -25,4 +25,8 @@ public class PhoneBook {
     public String getInfo(int idx) {
         return contacts.get(idx).getInfo();
     }
+
+    public Contact get(int idx) {
+        return contacts.get(idx);
+    }
 }

@@ -2,6 +2,7 @@ package contacts.entity;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 public abstract class Contact {
     protected String number;
@@ -29,6 +30,10 @@ public abstract class Contact {
 
     public String getCreatedAt() {
         return dateTimeFormatter.format(createdAt);
+    }
+
+    public List<String> getEditableFields() {
+        return List.of("number");
     }
 
     abstract String getInfo();

@@ -2,6 +2,8 @@ package contacts.entity;
 
 import contacts.util.StringUtils;
 
+import java.util.List;
+
 public class Organization extends Contact {
     private String organizationName;
     private String address;
@@ -23,7 +25,13 @@ public class Organization extends Contact {
     }
 
     @Override
-    String getSimpleName() {
+    public String getSimpleName() {
         return organizationName;
     }
+
+    @Override
+    public List<String> getEditableFields() {
+        return List.of("organizationName", "address", "number");
+    }
+
 }

@@ -5,10 +5,6 @@ import contacts.entity.Organization;
 import contacts.entity.Person;
 import contacts.util.UIConstants;
 import contacts.util.UIUtil;
-import contacts.util.ValidationUtils;
-
-import java.time.LocalDate;
-import java.time.format.DateTimeParseException;
 
 public class ContactFactory extends AbstractContactFactory {
     private static final String PERSON = "PERSON";
@@ -29,20 +25,8 @@ public class ContactFactory extends AbstractContactFactory {
     private Person createPerson() {
         String name = UIUtil.getLine(UIConstants.ENTER_NAME);
         String surname = UIUtil.getLine(UIConstants.ENTER_SURNAME);
-        String birthDateString = UIUtil.getLine(UIConstants.ENTER_BIRTH_DATE);
-        LocalDate birthDate = null;
-        try {
-            birthDate = LocalDate.parse(birthDateString);
-        } catch (DateTimeParseException e) {
-            UIUtil.println(UIConstants.BAD_BIRTH_DATE);
-        }
-        String genderString = UIUtil.getLine(UIConstants.ENTER_GENDER);
-        String gender = null;
-        if (ValidationUtils.isValidGender(genderString)) {
-            gender = genderString;
-        } else {
-            UIUtil.println(UIConstants.BAD_GENDER);
-        }
+        String birthDate = UIUtil.getLine(UIConstants.ENTER_BIRTH_DATE);
+        String gender = UIUtil.getLine(UIConstants.ENTER_GENDER);
         Person person = new Person();
         person.setName(name);
         person.setSurname(surname);
