@@ -29,5 +29,6 @@ public class UIConstants {
     public static final String EXIT = "exit";
     public static final String ADD = "add";
     public static final String INFO = "info";
+    public static final String COUNT = "count";
     public static final String EDIT = "edit";
 }

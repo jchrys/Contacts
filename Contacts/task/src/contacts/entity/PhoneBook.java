@@ -22,6 +22,10 @@ public class PhoneBook {
                 .collect(Collectors.joining("\n"));
     }
 
+    public int size() {
+        return contacts.size();
+    }
+
     public String getInfo(int idx) {
         return contacts.get(idx).getInfo();
     }
