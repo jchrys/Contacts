@@ -20,6 +20,7 @@ public class Organization extends Contact {
     String getInfo() {
         return "Organization name: " + organizationName + StringUtils.NEW_LINE +
                 "Address: " + address + StringUtils.NEW_LINE +
+                "Number: " + number + StringUtils.NEW_LINE +
                 "Time created: " + getCreatedAt() + StringUtils.NEW_LINE +
                 "Time last edit: " + getModifiedAt() + StringUtils.NEW_LINE;
     }

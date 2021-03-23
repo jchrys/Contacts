@@ -19,5 +19,6 @@ public class Add implements Command {
         Contact contact = contactFactory.create();
         phoneBook.add(contact);
         UIUtil.println(UIConstants.ADDED);
+        UIUtil.println("");
     }
 }

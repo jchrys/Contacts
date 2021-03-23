@@ -12,6 +12,6 @@ public class Count implements Command {
 
     @Override
     public void execute() {
-        UIUtil.println(String.valueOf(phoneBook.size()));
+        UIUtil.println("" + phoneBook.size() + " records.");
     }
 }

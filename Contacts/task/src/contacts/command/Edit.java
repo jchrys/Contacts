@@ -14,6 +14,10 @@ public class Edit implements Command {
 
     @Override
     public void execute() {
+        if (phoneBook.isEmpty()) {
+            UIUtil.println(UIConstants.NO_RECORDS_TO_EDIT);
+            return;
+        }
         UIUtil.println(phoneBook.list());
         String idxPlusOne = UIUtil.getLine(UIConstants.SELECT_RECORD);
         int idx = Integer.parseInt(idxPlusOne) - 1;

@@ -26,6 +26,10 @@ public class PhoneBook {
         return contacts.size();
     }
 
+    public boolean isEmpty() {
+        return null == contacts || contacts.isEmpty();
+    }
+
     public String getInfo(int idx) {
         return contacts.get(idx).getInfo();
     }

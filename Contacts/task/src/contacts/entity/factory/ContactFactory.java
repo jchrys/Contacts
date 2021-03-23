@@ -23,14 +23,14 @@ public class ContactFactory extends AbstractContactFactory {
     }
 
     private Person createPerson() {
-        String name = UIUtil.getLine(UIConstants.ENTER_NAME);
-        String surname = UIUtil.getLine(UIConstants.ENTER_SURNAME);
-        String birthDate = UIUtil.getLine(UIConstants.ENTER_BIRTH_DATE);
-        String gender = UIUtil.getLine(UIConstants.ENTER_GENDER);
         Person person = new Person();
+        String name = UIUtil.getLine(UIConstants.ENTER_NAME);
         person.setName(name);
+        String surname = UIUtil.getLine(UIConstants.ENTER_SURNAME);
         person.setSurname(surname);
+        String birthDate = UIUtil.getLine(UIConstants.ENTER_BIRTH_DATE);
         person.setBirthDate(birthDate);
+        String gender = UIUtil.getLine(UIConstants.ENTER_GENDER);
         person.setGender(gender);
         return person;
     }
