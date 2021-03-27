@@ -36,6 +36,6 @@ public abstract class Contact {
         return List.of("number");
     }
 
-    abstract String getInfo();
-    abstract String getSimpleName();
+    public abstract String getInfo();
+    public abstract String getSimpleName();
 }

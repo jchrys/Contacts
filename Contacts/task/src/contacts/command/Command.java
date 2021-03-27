@@ -1,5 +1,8 @@
 package contacts.command;
 
+
+import contacts.command.entity.CommandContext;
+
 public interface Command {
-    void execute();
+    CommandContext execute();
 }

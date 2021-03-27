@@ -17,7 +17,7 @@ public class Organization extends Contact {
     }
 
     @Override
-    String getInfo() {
+    public String getInfo() {
         return "Organization name: " + organizationName + StringUtils.NEW_LINE +
                 "Address: " + address + StringUtils.NEW_LINE +
                 "Number: " + number + StringUtils.NEW_LINE +

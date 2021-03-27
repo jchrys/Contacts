@@ -4,7 +4,7 @@ package contacts.util;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ValidationUtils {
+public abstract class ValidationUtils {
     private ValidationUtils() {
     }
 

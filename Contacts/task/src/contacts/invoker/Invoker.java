@@ -1,6 +1,7 @@
 package contacts.invoker;
 
 import contacts.command.Command;
+import contacts.command.entity.CommandContext;
 
 public class Invoker {
     private Command command;
@@ -9,7 +10,7 @@ public class Invoker {
         this.command = command;
     }
 
-    public void execute() {
-        command.execute();
+    public CommandContext execute() {
+        return command.execute();
     }
 }
